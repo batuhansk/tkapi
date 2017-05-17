@@ -15,7 +15,7 @@ This method retrieves schedule info. It lists all flights in requested route and
  # retrieveReservationDetail 
 This method returns the detailed information of the reservations created through our reservation system in XML format. It covers reservations made from all sales channels.
 
-You can see how to use the wrapper in the examples folder.
+You can see how to use the wrapper in the examples folder. (Once you need to install packages for run. Just type it 'npm install' and hit Enter.)
 
 Once you have created an account from the Turkish Airlines developer portal, you should create an application then you need to get an API key and API secret.
 

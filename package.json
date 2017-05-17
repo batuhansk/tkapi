@@ -1,0 +1,20 @@
+{
+  "name": "tkapi",
+  "version": "1.0.0",
+  "description": "Turkish Airlines API wrapper",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "turkish",
+    "airlines",
+    "tk",
+    "thy"
+  ],
+  "author": "strawb3rryx7",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.81.0"
+  }
+}
