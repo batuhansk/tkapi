@@ -1,6 +1,6 @@
 {
   "name": "tkapi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Turkish Airlines API wrapper",
   "main": "api.js",
   "scripts": {
@@ -15,6 +15,8 @@
   "author": "strawb3rryx7",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.4.0",
+    "moment": "^2.18.1",
     "request": "^2.81.0"
   }
 }

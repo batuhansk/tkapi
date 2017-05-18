@@ -8,7 +8,7 @@ var sandBoxEndpoints =
     getAvailability: 'test/getAvailability',
     getFareFamilyList: 'test/getFareFamilyList',
     getPortList: 'test/getPortList',
-    getTimetable: 'test/getTimetable',
+    getTimetable: 'test/getTimeTable',
     retrieveReservationDetail: 'test/retrieveReservationDetail'
 };
 
@@ -17,7 +17,7 @@ var productionEndPoints =
     getAvailability: 'getAvailability',
     getFareFamilyList: 'getFareFamilyList',
     getPortList: 'getPortList',
-    getTimetable: 'getTimetable',
+    getTimetable: 'getTimeTable',
     retrieveReservationDetail: 'retrieveReservationDetail'
 };
 

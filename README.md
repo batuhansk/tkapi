@@ -1,4 +1,4 @@
-# tkapi - Unofficial Node.js Turkish Airlines API wrapper
+# tkapi - Unofficial Turkish Airlines Node.js API wrapper
 
 tkapi is a Node.js API wrapper that provides to Turkish Airlines API endpoints.
 
@@ -22,8 +22,8 @@ Once you have created an account from the Turkish Airlines developer portal, you
 ### Version 1.0.0
 - Wrapper created.
 
-### Version 1.0.1 (soon)
-- Request model will be created for endpoints.
+### Version 1.0.1
+- Request models improved. (You can send request easily!)
 
 ###### Turkish Airlines Developer Portal:
 https://developer.turkishairlines.com
