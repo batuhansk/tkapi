@@ -148,7 +148,7 @@ api.prototype.getAvailability = function (opts, callback) {
                         }
                     }
 
-                    return cb(null, data);
+                    cb(null, data);
                 }
                 else
                     return callback(new Error('originDestInfo should not be empty!'))
