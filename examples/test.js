@@ -29,7 +29,7 @@ api.getAvailability(
                 },
                 cabinPreferences: [
                     {
-                        "Cabin": "ECONOMY"
+                    	Cabin: "ECONOMY"
                     }
                 ]
             },
@@ -48,7 +48,7 @@ api.getAvailability(
                 },
                 cabinPreferences: [
                     {
-                        "Cabin": "ECONOMY"
+                    	Cabin: "ECONOMY"
                     }
                 ]
             }
