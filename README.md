@@ -25,10 +25,13 @@ Once you have created an account from the Turkish Airlines developer portal, you
 ### Version 1.0.1
 - Request models improved. (You can send request easily!)
 
-###### Turkish Airlines Developer Portal:
+### Version 1.0.5
+- Request models improved. (Library available on npmjs!)
+
+##### Turkish Airlines Developer Portal:
 https://developer.turkishairlines.com
 
-###### Turkish Airlines API (Documentation):
+##### Turkish Airlines API (Documentation):
 https://developer.turkishairlines.com/documentation
 
 You can see example request data and much more in documentations.
