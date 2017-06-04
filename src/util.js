@@ -69,6 +69,7 @@ const getAvailabilityValidate = async (opts) => {
                 if (typeof info.departureDate === 'undefined'){
                 	throw new Error('departureShortDate is missing.')
                 } else {
+
                   let valid = isValidDate(info.departureDate);
 
                    if (!valid){
@@ -76,7 +77,7 @@ const getAvailabilityValidate = async (opts) => {
                    }
                     
 
-                   data.OriginDestinationInformation[i].DepartureDateTime.Date = date.format('DDMMM').toUpperCase();
+                   data.OriginDestinationInformation[i].DepartureDateTime.Date = info.departureDate;
                 }
 
                 if (typeof info.originInfo === 'undefined'){
@@ -140,7 +141,7 @@ const getAvailabilityValidate = async (opts) => {
 	}
 } 
 
-const getFareFamilyListValidate = async () => {
+const getFareFamilyListValidate = async (opts) => {
 	if (typeof opts === 'object' && Array.isArray(opts.portList)) {
 		
 		if (typeof opts.isMilesRequest === 'undefined' || opts.isMilesRequest !== true && opts.isMilesRequest !== false) {
@@ -160,7 +161,7 @@ const getFareFamilyListValidate = async () => {
             throw new Error('portList must include IATA port code.')
         }
 
-        return ops
+        return opts
 
 	} else {
 		throw new Error('portList must be defined as an Array when call the function!')
@@ -174,9 +175,9 @@ const getPortListValidate = async (opts) => {
 
         let lc = (typeof opts.languageCode !== 'undefined') ? true : false;
 
-        qs.airlineCode = opts.airlineCode;
+        data.airlineCode = opts.airlineCode;
         if (lc) {
-        	qs.languageCode = opts.languageCode
+        	data.languageCode = opts.languageCode
         }
 
         return data
@@ -306,10 +307,16 @@ const retrieveReservationDetailValidate = async (opts) => {
 }
 
 const isValidDate = (date) => {
-    var bits = date.split('-');
-    var d = new Date(bits[2], bits[1] - 1, bits[0]);
-    return d && (d.getMonth() + 1) == bits[1];
+    let d = new Date(date)
+    return d.isValid();
 }
+
+// Monkey Patch
+Date.prototype.isValid = function () {
+    
+    return this.getTime() === this.getTime();
+    
+}; 
 
 export default{
 	getAvailabilityValidate,

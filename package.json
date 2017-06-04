@@ -6,9 +6,7 @@
   "scripts": {
     "prepublish" : "npm run build",
     "build" : "babel ./src --out-dir ./dist",
-    "test" : "ava ",
-    "twatch" : "npm run test -- --watch",
-    "bwatch" : "npm run build -- --watch"
+    "watch" : "npm run build -- --watch"
   },
   "keywords": [
     "turkish",
@@ -33,7 +31,6 @@
     "got": "^7.0.0"
   },
   "devDependencies": {
-    "ava": "^0.19.1",
     "babel-cli": "^6.24.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-async-to-generator": "^6.24.1",

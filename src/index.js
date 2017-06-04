@@ -54,7 +54,7 @@ export default class TKApi {
 
   async getTimetable(opts){
     try {
-        const data = await util.retrieveReservationDetailValidate(opts)
+        const data = await util.getTimetableValidate(opts)
 
         return this.request(this.endpoints.getTimetable,data)
 
@@ -84,14 +84,13 @@ export default class TKApi {
       let response = await got.post(`${config.apiSettings.apiUrl}${path}`, {
         headers: {
           apikey : this.apiKey,
-          apisecret : this.apiSecret,
-          'Content-type': 'application/json'
+          apisecret : this.apiSecret
         },
         body: data,
-        form: true
+        json: true
       })
 
-      return response
+      return response.body
     } catch(err) {
       return err
     }

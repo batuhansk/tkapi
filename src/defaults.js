@@ -7,13 +7,13 @@ export default {
 					DepartureDateTime: {},
 					OriginLocation: {},
 					DestinationLocation: {},
-					CabinPreferences: {},
+					CabinPreferences: []
 				},
 				{
 					DepartureDateTime: {},
 					OriginLocation: {},
 					DestinationLocation: {},
-					CabinPreferences: {},
+					CabinPreferences: [],
 				},
 			],
 			PassengerTypeQuantity: [
