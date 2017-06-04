@@ -31,5 +31,19 @@ export default {
 				}
 			]
 		}
+	},
+	getTimetable: {
+		data: {
+			OTA_AirScheduleRQ:{
+				FlightTypePref: {
+					DirectAndNonStopOnlyInd: false,
+				},
+				OriginDestinationInformation: {
+					DepartureDateTime: {},
+					OriginLocation: {},
+					DestinationLocation: {}
+				}
+			}
+		}
 	}
 }

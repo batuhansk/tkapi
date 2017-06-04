@@ -14,10 +14,10 @@ export default class TKApi {
 
   }
 
-  async getAvailability(){
+  async getAvailability(opts){
 
      try {
-        const data = util.getAvailabilityValidate(opts)
+        const data = await util.getAvailabilityValidate(opts)
 
         return this.request(this.endpoints.getAvailability,data)
 
@@ -27,9 +27,9 @@ export default class TKApi {
 
   }
 
-  async getFareFamilyList(){
+  async getFareFamilyList(opts){
     try {
-        const data = util.getFareFamilyListValidate(opts)
+        const data = await util.getFareFamilyListValidate(opts)
 
         return this.request(this.endpoints.getFareFamilyList,data)
 
@@ -39,10 +39,10 @@ export default class TKApi {
 
   }
 
-  async getPortList(){
+  async getPortList(opts){
 
     try {
-        const data = util.getPortListValidate(opts)
+        const data = await util.getPortListValidate(opts)
 
         return this.request(this.endpoints.getPortList,data)
 
@@ -52,9 +52,9 @@ export default class TKApi {
 
   }
 
-  async getTimetable(){
+  async getTimetable(opts){
     try {
-        const data = util.retrieveReservationDetailValidate(opts)
+        const data = await util.retrieveReservationDetailValidate(opts)
 
         return this.request(this.endpoints.getTimetable,data)
 
@@ -67,7 +67,7 @@ export default class TKApi {
   async retrieveReservationDetail(opts){
   		
       try {
-        const data = util.retrieveReservationDetailValidate(opts)
+        const data = await util.retrieveReservationDetailValidate(opts)
 
         return this.request(this.endpoints.retrieveReservationDetail,data)
 
@@ -78,22 +78,23 @@ export default class TKApi {
   }
 
   async request(path, data){
-  		try {
 
-  			let response = await got.post(`${config.apiSettings.apiUrl}${path}`, {
-  					headers: {
-                	    apikey : this.apiKey,
-                	    apisecret : this.apiSecret
-                	},
-                	body : data,
-                	json : true
-  				}
-  			})
+  	try {
 
-  			return response.body
-  		} catch(err){
-  			return err
-  		}
+      let response = await got.post(`${config.apiSettings.apiUrl}${path}`, {
+        headers: {
+          apikey : this.apiKey,
+          apisecret : this.apiSecret,
+          'Content-type': 'application/json'
+        },
+        body: data,
+        form: true
+      })
+
+      return response
+    } catch(err) {
+      return err
+    }
 
   }
 
