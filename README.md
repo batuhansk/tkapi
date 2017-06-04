@@ -28,11 +28,18 @@ Once you have created an account from the Turkish Airlines developer portal, you
 ### Version 1.0.5
 - Library available on npmjs!
 
+### Version 1.0.6
+- Project merged with c0b41's contribution. Thanks for support. UP!
+
 ##### Turkish Airlines Developer Portal:
 https://developer.turkishairlines.com
 
 ##### Turkish Airlines API (Documentation):
 https://developer.turkishairlines.com/documentation
+
+#### Contributors
+- strawb3rryx7
+- c0b41
 
 You can see example request data and much more in documentations.
 
