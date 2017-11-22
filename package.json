@@ -1,13 +1,14 @@
 {
   "name": "tkapi",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "Turkish Airlines API wrapper",
   "main": "dist/index.js",
   "scripts": {
-    "prepublish" : "npm run build",
-    "build" : "babel ./src --out-dir ./dist",
-    "watch" : "npm run build -- --watch"
+    "prepublish": "npm run build",
+    "build": "babel ./src --out-dir ./dist",
+    "watch": "npm run build -- --watch"
   },
+  "readme": "README.md",
   "keywords": [
     "turkish",
     "airlines",
@@ -16,11 +17,11 @@
   ],
   "author": [
     {
-      "name" : "Batuhan Saka",
+      "name": "Batuhan Saka",
       "email": "strawb3rryx7@gmail.com",
-      "url" : "http://www.batuhansaka.com"
-    }
-    ,{
+      "url": "http://www.batuhansaka.com"
+    },
+    {
       "name": "Ayhan K.",
       "email": "cobaimelan@protonmail.com",
       "url": "https://c0b41.github.io"
@@ -28,7 +29,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "got": "^7.0.0"
+    "got": "^7.0.0",
+    "query-string": "^5.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",

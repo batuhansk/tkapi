@@ -1,100 +1,116 @@
 import 'babel-polyfill'
 import got from 'got'
+import qs from 'query-string'
 import * as config from './config'
-import * as util from './util'
 
 export default class TKApi {
-	constructor({apiKey = null, apiSecret = null, isSandbox = false}) {
-  		
-  		this.apiKey = apiKey
-    	this.apiSecret = apiSecret
-    	this.isSandbox = isSandbox
+  constructor({ apiKey = null, apiSecret = null, isSandbox = false }) {
 
-    	this.endpoints = (isSandbox) ? config.sandBoxEndpoints : config.productionEndPoints
+    this.apiKey = apiKey
+    this.apiSecret = apiSecret
+    this.isSandbox = isSandbox
 
-  }
-
-  async getAvailability(opts){
-
-     try {
-        const data = await util.getAvailabilityValidate(opts)
-
-        return this.request(this.endpoints.getAvailability,data)
-
-      } catch(err){
-        return err
-      }
+    this.endpoints = (isSandbox) ? config.sandBoxEndpoints : config.productionEndPoints
 
   }
 
-  async getFareFamilyList(opts){
+  async getAvailability(opts) {
     try {
-        const data = await util.getFareFamilyListValidate(opts)
-
-        return this.request(this.endpoints.getFareFamilyList,data)
-
-      } catch(err){
-        return err
-      }
-
+      return this.postRequest(this.endpoints.getAvailability, opts)
+    }
+    catch (err) {
+      return err
+    }
   }
 
-  async getPortList(opts){
-
+  async getFareFamilyList(opts) {
     try {
-        const data = await util.getPortListValidate(opts)
-
-        return this.request(this.endpoints.getPortList,data)
-
-      } catch(err){
-        return err
-      }
+      return this.postRequest(this.endpoints.getFareFamilyList, opts)
+    }
+    catch (err) {
+      return err
+    }
 
   }
 
-  async getTimetable(opts){
+  async getPortList(opts) {
     try {
-        const data = await util.getTimetableValidate(opts)
-
-        return this.request(this.endpoints.getTimetable,data)
-
-      } catch(err){
-        return err
-      }
+      return this.getRequest(this.endpoints.getPortList, opts)
+    }
+    catch (err) {
+      return err
+    }
 
   }
 
-  async retrieveReservationDetail(opts){
-  		
-      try {
-        const data = await util.retrieveReservationDetailValidate(opts)
-
-        return this.request(this.endpoints.retrieveReservationDetail,data)
-
-      } catch(err){
-        return err
-      }
-
+  async getTimetable(opts) {
+    try {
+      return this.postRequest(this.endpoints.getTimetable, opts)
+    }
+    catch (err) {
+      return err
+    }
   }
 
-  async request(path, data){
+  async retrieveReservationDetail(opts) {
+    try {
+      return this.getRequest(this.endpoints.retrieveReservationDetail, opts)
+    }
+    catch (err) {
+      return err
+    }
+  }
 
-  	try {
+  async calculateFlightMiles(opts) {
+    try {
+      return this.postRequest(this.endpoints.calculateFlightMiles, opts)
+    }
+    catch (err) {
+      return err
+    }
+  }
 
+  async calculateAwardMilesWithTax(opts) {
+    try {
+      return this.postRequest(this.endpoints.calculateAwardMilesWithTax, opts)
+    }
+    catch (err) {
+      return err
+    }
+  }
+
+  async getRequest(path, data) {
+    try {
+      const queryString = qs.stringify(data);
+
+      let response = await got.get(`${config.apiSettings.apiUrl}${path}?${queryString}`, {
+        headers: {
+          apikey: this.apiKey,
+          apisecret: this.apiSecret
+        },
+        json: true
+      })
+
+      return response.body
+    } catch (err) {
+      return err
+    }
+  }
+
+  async postRequest(path, data) {
+    try {
       let response = await got.post(`${config.apiSettings.apiUrl}${path}`, {
         headers: {
-          apikey : this.apiKey,
-          apisecret : this.apiSecret
+          apikey: this.apiKey,
+          apisecret: this.apiSecret
         },
         body: data,
         json: true
       })
 
       return response.body
-    } catch(err) {
+    } catch (err) {
       return err
     }
-
   }
-
 }

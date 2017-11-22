@@ -7,13 +7,16 @@ You can use this endpoints:
 The Availability Request message requests Flight Availability for a city pair on a specific date for a specific number and type of passengers. Calendar with best price of each day in a week and full flight list with their price depending on cabin will be provided.
  # getFareFamilyList 
 This is a lookup method that gives fare family list to be used for getAvailability request. The output changes depending on ports location (domestic or international) and ticket type (award ticket or not)
- # getPortList 
+ # getPortList
 Lists all ports in details.
- # getTimetable 
+ # getTimetable
 This method retrieves schedule info. It lists all flights in requested route and operation days in a week.
- 
- # retrieveReservationDetail 
+ # retrieveReservationDetail
 This method returns the detailed information of the reservations created through our reservation system in XML format. It covers reservations made from all sales channels.
+ # calculateFlightMiles
+Calculates miles for flight.
+ # calculateAwardMilesWithTax
+Calculates award miles with tax.
 
 You can see how to use the wrapper in the examples folder. (Once you need to install packages for run. Just type it 'npm install' and hit Enter.)
 
@@ -29,17 +32,24 @@ Once you have created an account from the Turkish Airlines developer portal, you
 - Library available on npmjs!
 
 ### Version 1.0.6
-- Project merged with c0b41's contribution. Thanks for support. UP!
+- Project merged with c0b41's contribution. Thanks for support.
+
+### Version 2.0.0
+- The complex parameter validation structure has been removed. You can handle body/status values via returned body.
+- 2 new endpoints added. (calculateFlightMiles / calculateAwardMilesWithTax)
+
+Firstly, run the following commands to use wrapper,
+
+```
+npm install
+npm run-script build
+```
 
 ##### Turkish Airlines Developer Portal:
 https://developer.turkishairlines.com
 
 ##### Turkish Airlines API (Documentation):
 https://developer.turkishairlines.com/documentation
-
-#### Contributors
-- strawb3rryx7
-- c0b41
 
 You can see example request data and much more in documentations.
 
