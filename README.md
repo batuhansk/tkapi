@@ -18,7 +18,14 @@ Calculates miles for flight.
  # calculateAwardMilesWithTax
 Calculates award miles with tax.
 
-You can see how to use the wrapper in the examples folder. (Once you need to install packages for run. Just type it 'npm install' and hit Enter.)
+You can see how to use the wrapper in the examples folder. (Once you need to install packages for run.)
+
+Firstly, run the following commands to use wrapper,
+
+```
+npm install
+npm run-script build
+```
 
 Once you have created an account from the Turkish Airlines developer portal, you should create an application then you need to get an API key and API secret.
 
@@ -37,13 +44,6 @@ Once you have created an account from the Turkish Airlines developer portal, you
 ### Version 2.0.0
 - The complex parameter validation structure has been removed. You can handle body/status values via returned body.
 - 2 new endpoints added. (calculateFlightMiles / calculateAwardMilesWithTax)
-
-Firstly, run the following commands to use wrapper,
-
-```
-npm install
-npm run-script build
-```
 
 ##### Turkish Airlines Developer Portal:
 https://developer.turkishairlines.com
