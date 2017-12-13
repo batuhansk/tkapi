@@ -2,7 +2,7 @@
 
 tkapi is a Node.js API wrapper that provides to Turkish Airlines API endpoints.
 
-You can use this endpoints:
+You can use these endpoints:
  # getAvailability 
 The Availability Request message requests Flight Availability for a city pair on a specific date for a specific number and type of passengers. Calendar with best price of each day in a week and full flight list with their price depending on cabin will be provided.
  # getFareFamilyList 
