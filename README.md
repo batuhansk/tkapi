@@ -56,4 +56,4 @@ https://developer.turkishairlines.com/documentation
 
 ## License
 ---
-tk-api is available under the MIT license. See the LICENSE file for more info.
+tkapi is available under the MIT license. See the LICENSE file for more info.
