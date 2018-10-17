@@ -55,5 +55,4 @@ https://developer.turkishairlines.com
 https://developer.turkishairlines.com/documentation
 
 ## License
----
 tkapi is available under the MIT license. See the LICENSE file for more info.
