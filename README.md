@@ -45,12 +45,15 @@ Once you have created an account from the Turkish Airlines developer portal, you
 - The complex parameter validation structure has been removed. You can handle body/status values via returned body.
 - 2 new endpoints added. (calculateFlightMiles / calculateAwardMilesWithTax)
 
+
+You can see example request data and much more in documentations.
+
 ##### Turkish Airlines Developer Portal:
 https://developer.turkishairlines.com
 
 ##### Turkish Airlines API (Documentation):
 https://developer.turkishairlines.com/documentation
 
-You can see example request data and much more in documentations.
-
-Good luck. Keep in touch :=)
+## License
+---
+tk-api is available under the MIT license. See the LICENSE file for more info.
